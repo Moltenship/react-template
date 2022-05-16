@@ -451,6 +451,18 @@ module.exports = {
   },
   overrides: [
     {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        'no-restricted-syntax': [
+          'error',
+          {
+            selector: 'TSEnumDeclaration',
+            message: 'Use union instead.',
+          },
+        ],
+      },
+    },
+    {
       files: ['*Dto.ts'],
       rules: {
         '@typescript-eslint/naming-convention': 'off',
